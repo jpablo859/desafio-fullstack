@@ -138,7 +138,6 @@ export const UserForm: React.FC = () => {
                                 type="password"
                                 value={state.formData.contrasena}
                                 onChange={handleChange}
-                                required={!selectedUserId}
                             />
 
                             <FormActions
