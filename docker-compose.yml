@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./MSUser
+    container_name: ms_user
+    restart: always
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./Frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8080/user
+    depends_on:
+      - app
