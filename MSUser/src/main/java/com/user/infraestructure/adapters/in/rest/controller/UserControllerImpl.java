@@ -8,6 +8,7 @@ import com.user.infraestructure.adapters.in.rest.controller.response.ApiResponse
 import com.user.infraestructure.adapters.in.rest.controller.response.UserResponse;
 import com.user.infraestructure.ports.in.rest.UserController;
 import com.user.infraestructure.ports.in.usecase.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
+@Tag(name = "Usuario", description = "Operaciones relacionadas con usuarios")
 @RequestMapping("user")
 public class UserControllerImpl implements UserController {
     private final UserMapper userMapper;
